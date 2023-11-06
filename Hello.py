@@ -1,4 +1,8 @@
 import langchain.vectorstores
+import langchain.embeddings
+import langchain.text_splitter
+import langchain.document_loaders
+import langchain.agents.agent_toolkits
 import streamlit as st
 import streamlit_ace as sa 
 import openai
@@ -6,14 +10,13 @@ import openai
 
 
 Chroma = langchain.vectorstores.Chroma
-embeddings=l.OpenAIEmbeddings
-recursivecharactertextsplitter= l.recursivecharactertextsplitter
+embeddings=langchain.embeddings.OpenAIEmbeddings
+recursivecharactertextsplitter= langchain.text_splitter.recursivecharactertextsplitter
 st_ace=sa.st_ace
-pypdfloader=l.pypdfloader
-create_vectorstore_agent=l.create_vectorstore_agent
-vectorstoretoolkit=l. vectorstoretoolkit
-vectorstoreinfo=l. vectorstoreinfo
-image=p.image
+pypdfloader=langchain.document_loaders.pypdfloader
+create_vectorstore_agent=langchain.agents.agent_toolkits.create_vectorstore_agent
+vectorstoretoolkit=langchain.agents.agent_toolkits. vectorstoretoolkit
+vectorstoreinfo=langchain.agents.agent_toolkits. vectorstoreinfo
 
 api_key = st.secrets["OPENAI_API_KEY"]
 
