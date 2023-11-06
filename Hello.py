@@ -17,7 +17,7 @@ from PIL import Image
 api_key = st.secrets["OPENAI_API_KEY"]
 
 # Use the API key with OpenAI
-openai.api_key = api_key
+OpenAI.api_key = api_key
 
 llm = OpenAI(temperature=0, verbose=True)
 embeddings = OpenAIEmbeddings()
