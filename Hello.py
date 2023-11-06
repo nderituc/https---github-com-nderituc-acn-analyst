@@ -1,5 +1,3 @@
-import os
-import glob
 import json
 from langchain.llms import openai
 from langchain.embeddings import openaimbeddings
