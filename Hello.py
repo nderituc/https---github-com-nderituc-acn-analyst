@@ -7,13 +7,13 @@ from langchain.text_splitter import recursivecharactertextsplitter
 import streamlit as st
 from streamlit_ace import st_ace
 from langchain.document_loaders import pypdfloader
-from langchain.vectorstores import Chroma
+from langchain.vectorstores import chroma
 from langchain.agents.agent_toolkits import (
     create_vectorstore_agent,
-    VectorStoreToolkit,
-    VectorStoreInfo,
+    vectorstoretoolkit,
+    vectorstoreinfo,
 )
-from PIL import Image
+from pil import Image
 
 #os.environ['OPENAI_API_KEY'] = "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"
 api_key = st.secrets["OPENAI_API_KEY"]
@@ -30,7 +30,7 @@ pdf_files = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst
 
 loaders = []
 for pdf_file in pdf_files:
-    loaders.append(PyPDFLoader(pdf_file))
+    loaders.append(pypdfloader(pdf_file))
 
 all_pages = []
 
@@ -40,13 +40,13 @@ for loader in loaders:
     all_pages.extend(pages)
 store = chroma.from_documents(all_pages,embeddings,collection_name='immigrant_re')
 
-vectorstore_info = VectorStoreInfo(
+vectorstore_info = vectorstoreinfo(
     name="immigrant_report",
     description="african immigrants report as a pdf",
     vectorstore=store
 )
 
-toolkit = VectorStoreToolkit(vectorstore_info=vectorstore_info)
+toolkit = vectorstoretoolkit(vectorstore_info=vectorstore_info)
 agent_executor = create_vectorstore_agent(
     llm=llm,
     toolkit=toolkit,
