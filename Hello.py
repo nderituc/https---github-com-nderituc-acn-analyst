@@ -1,4 +1,4 @@
-import langchain 
+import langchain as l
 import streamlit as st
 import streamlit_ace as sa 
 
