@@ -1,4 +1,4 @@
 streamlit
-langchain
+https://github.com/langchain-ai/langchain.git
 streamlit_ace
 openai
