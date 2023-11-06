@@ -1,7 +1,6 @@
 import json
 import langchain
 import openai
-import OpenAIEmbeddings from langchain.embeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import streamlit as st
 from streamlit_ace import st_ace
@@ -21,7 +20,7 @@ api_key = st.secrets["OPENAI_API_KEY"]
 openai.api_key = api_key
 
 #llm = OpenAI(temperature=0, verbose=True)
-embeddings = OpenAIEmbeddings()
+#embeddings = OpenAIEmbeddings()
 
 
 # Find all PDF files in the folder
@@ -37,7 +36,7 @@ all_pages = []
 for loader in loaders:
     pages = loader.load_and_split()
     all_pages.extend(pages)
-store = Chroma.from_documents(all_pages, embeddings, collection_name='immigrant_re')
+store = Chroma.from_documents(all_pages, collection_name='immigrant_re')
 
 vectorstore_info = VectorStoreInfo(
     name="immigrant_report",
