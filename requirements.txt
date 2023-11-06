@@ -1,4 +1,9 @@
-streamlit
-langchain
-streamlit_ace
-openai
+json
+langchain.llm 
+langchain.vectorstores 
+langchain.embeddings 
+langchain.text_splitter 
+streamlit 
+streamlit_ace 
+langchain.document_loaders 
+langchain.agents.agent_toolkits 
