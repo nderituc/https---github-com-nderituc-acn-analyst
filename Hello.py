@@ -13,7 +13,7 @@ from langchain.agents.agent_toolkits import (
     vectorstoretoolkit,
     vectorstoreinfo,
 )
-from pil import Image
+from pil import image
 
 #os.environ['OPENAI_API_KEY'] = "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"
 api_key = st.secrets["OPENAI_API_KEY"]
