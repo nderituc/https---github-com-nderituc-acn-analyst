@@ -4,7 +4,7 @@ import streamlit_ace as sa
 import openai
 
 
-chroma = l.Chroma
+Chroma=l.vectorstores.chroma 
 embeddings=l.OpenAIEmbeddings
 recursivecharactertextsplitter= l.recursivecharactertextsplitter
 st_ace=sa.st_ace
