@@ -1,4 +1,5 @@
 import json
+import langchain
 from langchain.llms import openai
 from langchain.embeddings import openaimbeddings
 from langchain.text_splitter import recursivecharactertextsplitter
