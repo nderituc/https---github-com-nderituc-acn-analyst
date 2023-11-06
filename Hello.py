@@ -1,5 +1,5 @@
 import json
-import langchain.chroma
+import Langchain.Chroma
 import openai
 import streamlit as st
 from PIL import Image
@@ -27,7 +27,7 @@ all_pages = []
 for loader in loaders:
     pages = loader.load_and_split()
     all_pages.extend(pages)
-store = Chroma.from_documents(all_pages, collection_name='immigrant_re')
+store = Langchain.Chroma.from_documents(all_pages, collection_name='immigrant_re')
 
 vectorstore_info = VectorStoreInfo(
     name="immigrant_report",
