@@ -22,11 +22,9 @@ openai.api_key = api_key
 llm = OpenAI(temperature=0, verbose=True)
 embeddings = OpenAIEmbeddings()
 
-# Specify the folder path containing PDF files
-folder_path = "C:/Users/caten/OneDrive/Desktop/ACN"
 
 # Find all PDF files in the folder
-pdf_files = 
+pdf_files = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/main/.documents"
 
 loaders = []
 for pdf_file in pdf_files:
