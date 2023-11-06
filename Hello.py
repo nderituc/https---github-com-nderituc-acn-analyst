@@ -6,6 +6,7 @@ import langchain.agents.agent_toolkits
 import streamlit as st
 import streamlit_ace as sa 
 import openai
+import pathlib.Path
 
 
 
@@ -25,10 +26,10 @@ openai.api_key = api_key
 
 
 # Find all PDF files in the folder
-pdf_files = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/main/.documents"
+pdf_files = Path("https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/main/.documents")
 
 loaders = []
-for pdf_file in pdf_files:
+for pdf_file in pdf_files.iterdir():
     loaders.append(pypdfloader(pdf_file))
 
 all_pages = []
