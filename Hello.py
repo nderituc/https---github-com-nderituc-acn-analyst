@@ -1,5 +1,3 @@
-import os
-import glob
 import json
 from langchain.llms import OpenAI
 from langchain.embeddings import OpenAIEmbeddings
@@ -28,7 +26,7 @@ embeddings = OpenAIEmbeddings()
 folder_path = "C:/Users/caten/OneDrive/Desktop/ACN"
 
 # Find all PDF files in the folder
-pdf_files = glob.glob(os.path.join(folder_path, "*.pdf"))
+pdf_files = 
 
 loaders = []
 for pdf_file in pdf_files:
