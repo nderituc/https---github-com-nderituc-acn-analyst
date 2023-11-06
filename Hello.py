@@ -26,12 +26,14 @@ openai.api_key = api_key
 
 
 # Find all PDF files in the folder
-pdf_files = pathlib.Path("https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/main/.documents")
-
-loaders = []
-for pdf_file in pdf_files.iterdir():
-    loaders.append(pypdfloader(pdf_file))
-
+url = pathlib.Path("https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/main/.documents")
+response = requests.get(url)
+if response.status_code == 200:
+    files = response.text.split('\n')  # Assuming the server returns a list of files
+    loaders=[]
+    for file in files:
+        loaders.append(pypdfloader(file))
+        
 all_pages = []
 
 # Load and split the PDFs
