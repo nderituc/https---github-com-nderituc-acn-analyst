@@ -1,29 +1,29 @@
 import json
-from langchain.llms import openai
+import langchain.llm as ll 
 import langchain.vectorstores as vs
-from langchain.embeddings import openaiembeddings
-from langchain.text_splitter import recursivecharactertextsplitter
+import langchain.embeddings as em
+import langchain.text_splitter as ts 
 import streamlit as st
-from streamlit_ace import st_ace
-from langchain.document_loaders import pypdfloader
-from langchain.vectorstores import chroma
-from langchain.agents.agent_toolkits import (
-    create_vectorstore_agent,
-    vectorstoretoolkit,
-    vectorstoreinfo,
-)
-from pil import image
+import streamlit_ace as sa 
+import langchain.document_loaders as ld
+import langchain.agents.agent_toolkits as la
 
-#os.environ['OPENAI_API_KEY'] = "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"
+
+openai = ll.OpenAI(temperature=0, verbose=True)
+chroma = vs.Chroma
+embeddings=em.OpenAIEmbeddings
+recursivecharactertextsplitter= ts.recursivecharactertextsplitter
+st_ace=sa.st_ace
+pypdfloader=ld.pypdfloader
+create_vectorstore_agent=la.create_vectorstore_agent
+vectorstoretoolkit=la. vectorstoretoolkit
+vectorstoreinfo=la. vectorstoreinfo
+image=p.image
+
 api_key = st.secrets["OPENAI_API_KEY"]
 
 # Use the API key with OpenAI
 openai.api_key = api_key
-
-#llm = OpenAI(temperature=0, verbose=True)
-embeddings = openaimbeddings()
-
-chroma = vs.chroma
 
 
 # Find all PDF files in the folder
