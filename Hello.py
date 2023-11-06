@@ -6,6 +6,7 @@ import langchain.agents.agent_toolkits
 import streamlit as st
 import streamlit_ace as sa 
 import openai
+import requests
 
 
 
@@ -26,7 +27,7 @@ openai.api_key = api_key
 
 
 # Find all PDF files in the folder
-url = pathlib.Path("https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/main/.documents")
+url = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/main/.documents"
 response = requests.get(url)
 if response.status_code == 200:
     files = response.text.split('\n')  # Assuming the server returns a list of files
