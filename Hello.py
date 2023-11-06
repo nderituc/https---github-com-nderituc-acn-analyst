@@ -11,12 +11,12 @@ import openai
 
 Chroma = langchain.vectorstores.Chroma
 embeddings=langchain.embeddings.OpenAIEmbeddings
-recursivecharactertextsplitter= langchain.text_splitter.recursivecharactertextsplitter
+recursivecharactertextsplitter= langchain.text_splitter.RecursiveCharacterTextSplitter
 st_ace=sa.st_ace
-pypdfloader=langchain.document_loaders.pypdfloader
+pypdfloader=langchain.document_loaders.PyPDFLoader
 create_vectorstore_agent=langchain.agents.agent_toolkits.create_vectorstore_agent
-vectorstoretoolkit=langchain.agents.agent_toolkits. vectorstoretoolkit
-vectorstoreinfo=langchain.agents.agent_toolkits. vectorstoreinfo
+vectorstoretoolkit=langchain.agents.agent_toolkits.VectorStoreToolkit
+vectorstoreinfo=langchain.agents.agent_toolkits. VectorStoreInfo
 
 api_key = st.secrets["OPENAI_API_KEY"]
 
