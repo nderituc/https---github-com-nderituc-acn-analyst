@@ -29,7 +29,7 @@ pdf_files = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst
 
 loaders = []
 for pdf_file in pdf_files:
-    loaders.append(PyPDFLoader(pdf_file))
+    loaders.append(pypdfloader(pdf_file))
 
 all_pages = []
 
