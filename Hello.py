@@ -1,16 +1,6 @@
 import json
 import langchain
 import openai
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-import streamlit as st
-from streamlit_ace import st_ace
-from langchain.document_loaders import PyPDFLoader
-from langchain.vectorstores import Chroma
-from langchain.agents.agent_toolkits import (
-    create_vectorstore_agent,
-    VectorStoreToolkit,
-    VectorStoreInfo,
-)
 from PIL import Image
 
 #os.environ['OPENAI_API_KEY'] = "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"
