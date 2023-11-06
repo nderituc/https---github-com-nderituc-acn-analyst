@@ -1,10 +1,11 @@
-import langchain as l
+import langchain.vectorstores
 import streamlit as st
 import streamlit_ace as sa 
 import openai
 
 
-Chroma=l.vectorstores.Chroma 
+
+Chroma = langchain.vectorstores.Chroma
 embeddings=l.OpenAIEmbeddings
 recursivecharactertextsplitter= l.recursivecharactertextsplitter
 st_ace=sa.st_ace
