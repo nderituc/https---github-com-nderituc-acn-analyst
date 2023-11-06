@@ -1,7 +1,6 @@
 import json
-import langchain
 from langchain.llms import openai
-from langchain.embeddings import openaimbeddings
+from langchain.embeddings import openaiembeddings
 from langchain.text_splitter import recursivecharactertextsplitter
 import streamlit as st
 from streamlit_ace import st_ace
