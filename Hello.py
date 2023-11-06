@@ -1,6 +1,6 @@
 import json
-from langchain.llms import openai
-from langchain.embeddings import openaiEmbeddings
+import openai
+from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import streamlit as st
 from streamlit_ace import st_ace
@@ -20,7 +20,7 @@ api_key = st.secrets["OPENAI_API_KEY"]
 openai.api_key = api_key
 
 llm = openai(temperature=0, verbose=True)
-embeddings = openaiEmbeddings()
+embeddings = OpenAIEmbeddings()
 
 
 # Find all PDF files in the folder
