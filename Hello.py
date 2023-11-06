@@ -1,5 +1,5 @@
 import json
-import langchain
+import langchain.chroma
 import openai
 import streamlit as st
 from PIL import Image
