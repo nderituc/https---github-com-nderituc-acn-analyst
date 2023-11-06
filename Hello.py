@@ -1,7 +1,7 @@
 import json
 import openai
-from langchain.llms import OpenAI
-from langchain.embeddings import OpenAIEmbeddings
+from langchain.llms import openai
+from langchain.embeddings import openaiEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import streamlit as st
 from streamlit_ace import st_ace
@@ -18,10 +18,10 @@ from PIL import Image
 api_key = st.secrets["OPENAI_API_KEY"]
 
 # Use the API key with OpenAI
-OpenAI.api_key = api_key
+openai.api_key = api_key
 
-llm = OpenAI(temperature=0, verbose=True)
-embeddings = OpenAIEmbeddings()
+llm = openai(temperature=0, verbose=True)
+embeddings = openaiEmbeddings()
 
 
 # Find all PDF files in the folder
