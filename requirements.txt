@@ -3,5 +3,6 @@ langchain
 streamlit
 streamlit_ace
 pypdf
+pathlib
 
 
