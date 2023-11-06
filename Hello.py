@@ -1,7 +1,7 @@
 import langchain 
 import streamlit as st
 import streamlit_ace as sa 
-import pil as p
+
 
 openai = l.OpenAI(temperature=0, verbose=True)
 chroma = l.Chroma
