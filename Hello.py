@@ -1,6 +1,6 @@
 import json
 import langchain
-from langchain.llms import OpenAI
+import OpenAI
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import streamlit as st
@@ -20,7 +20,7 @@ api_key = st.secrets["OPENAI_API_KEY"]
 # Use the API key with OpenAI
 OpenAI.api_key = api_key
 
-llm = OpenAI(temperature=0, verbose=True)
+#llm = OpenAI(temperature=0, verbose=True)
 embeddings = OpenAIEmbeddings()
 
 
