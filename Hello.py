@@ -1,5 +1,6 @@
 import json
 from langchain.llms import openai
+import langchain.vectorstores as vs
 from langchain.embeddings import openaiembeddings
 from langchain.text_splitter import recursivecharactertextsplitter
 import streamlit as st
@@ -21,6 +22,8 @@ openai.api_key = api_key
 
 #llm = OpenAI(temperature=0, verbose=True)
 embeddings = openaimbeddings()
+
+chroma = vs.chroma
 
 
 # Find all PDF files in the folder
