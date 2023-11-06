@@ -1,8 +1,18 @@
+import os
+import glob
 import json
-import Langchain.chroma
-from langchain.embeddings import openaiembeddings
-import openai
+from langchain.llms import openai
+from langchain.embeddings import openaimbeddings
+from langchain.text_splitter import recursivecharactertextsplitter
 import streamlit as st
+from streamlit_ace import st_ace
+from langchain.document_loaders import pypdfloader
+from langchain.vectorstores import Chroma
+from langchain.agents.agent_toolkits import (
+    create_vectorstore_agent,
+    VectorStoreToolkit,
+    VectorStoreInfo,
+)
 from PIL import Image
 
 #os.environ['OPENAI_API_KEY'] = "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"
@@ -12,7 +22,7 @@ api_key = st.secrets["OPENAI_API_KEY"]
 openai.api_key = api_key
 
 #llm = OpenAI(temperature=0, verbose=True)
-#embeddings = OpenAIEmbeddings()
+embeddings = openaimbeddings()
 
 
 # Find all PDF files in the folder
@@ -28,7 +38,7 @@ all_pages = []
 for loader in loaders:
     pages = loader.load_and_split()
     all_pages.extend(pages)
-store = chroma.from_documents(all_pages, collection_name='immigrant_re')
+store = chroma.from_documents(all_pages,embeddings,collection_name='immigrant_re')
 
 vectorstore_info = VectorStoreInfo(
     name="immigrant_report",
