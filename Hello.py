@@ -1,22 +1,17 @@
-import langchain.llm as ll 
-import langchain.vectorstores as vs
-import langchain.embeddings as em
-import langchain.text_splitter as ts 
+import langchain 
 import streamlit as st
 import streamlit_ace as sa 
-import langchain.document_loaders as ld
-import langchain.agents.agent_toolkits as la
+import pil as p
 
-
-openai = ll.OpenAI(temperature=0, verbose=True)
-chroma = vs.Chroma
-embeddings=em.OpenAIEmbeddings
-recursivecharactertextsplitter= ts.recursivecharactertextsplitter
+openai = l.OpenAI(temperature=0, verbose=True)
+chroma = l.Chroma
+embeddings=l.OpenAIEmbeddings
+recursivecharactertextsplitter= l.recursivecharactertextsplitter
 st_ace=sa.st_ace
-pypdfloader=ld.pypdfloader
-create_vectorstore_agent=la.create_vectorstore_agent
-vectorstoretoolkit=la. vectorstoretoolkit
-vectorstoreinfo=la. vectorstoreinfo
+pypdfloader=l.pypdfloader
+create_vectorstore_agent=l.create_vectorstore_agent
+vectorstoretoolkit=l. vectorstoretoolkit
+vectorstoreinfo=l. vectorstoreinfo
 image=p.image
 
 api_key = st.secrets["OPENAI_API_KEY"]
