@@ -1,9 +1,9 @@
 import langchain as l
 import streamlit as st
 import streamlit_ace as sa 
+import openai
 
 
-openai = l.OpenAI(temperature=0, verbose=True)
 chroma = l.Chroma
 embeddings=l.OpenAIEmbeddings
 recursivecharactertextsplitter= l.recursivecharactertextsplitter
