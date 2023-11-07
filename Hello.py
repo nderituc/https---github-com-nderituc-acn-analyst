@@ -33,20 +33,19 @@ url = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/
 
 
 pdf_files = ['https://github.com/nderituc/https---github-com-nderituc-acn-analyst/blob/main/.documents/RE_2022.01.20_Black-Immigrants_FINAL.pdf', 'https://github.com/nderituc/https---github-com-nderituc-acn-analyst/blob/main/.documents/immigrant_analysis.pdf','https://github.com/nderituc/https---github-com-nderituc-acn-analyst/blob/main/.documents/subsaharan_immigrants.pdf']  # List of PDF files in the repository
-
-loaders = []
-for pdf_file in pdf_files:
-    file_url = pdf_file
-    response = requests.get(file_url)
+loaders=[]
+# Loop through the list of file URLs
+for file in pdf-files:
+    # Fetch the PDF content from the URL
+    response = requests.get(file)
     
     if response.status_code == 200:
-        pdf_data = io.BytesIO(response.content)
-        pdf_reader = PdfReader(pdf_data)
-        loaders.append(pdf_reader)
-    else:
-        st.write(f"Failed to retrieve {pdf_file}")
-
-
+        # Content of the PDF file
+        pdf_content = response.content
+        
+        # Use PyPDFLoader to process the PDF content (adjust as needed based on your library)
+        cont = PyPDFLoader(pdf_content)
+        loaders.append(cont)
         
 all_pages = []
 
