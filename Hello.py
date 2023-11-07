@@ -33,8 +33,7 @@ if response.status_code == 200:
     files = response.text.split('\n')  # Assuming the server returns a list of files
     loaders=[]
     for file in files:
-        pdf=requests.get(file)
-        loaders.append(pypdfloader(pdf))
+        loaders.append(file)
         
 all_pages = []
 
