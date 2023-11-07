@@ -7,7 +7,6 @@ import streamlit as st
 import streamlit_ace as sa 
 import openai
 import requests
-import io
 
 
 
