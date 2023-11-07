@@ -7,6 +7,7 @@ import streamlit as st
 import streamlit_ace as sa 
 import openai
 import requests
+import io
 
 
 
@@ -28,12 +29,25 @@ openai.api_key = api_key
 
 # Find all PDF files in the folder
 url = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/main/.documents"
-response = requests.get(url)
-if response.status_code == 200:
-    files = response.text.split('\n')  # Assuming the server returns a list of files
-    loaders=[]
-    for file in files:
-        loaders.append(file)
+
+# Replace 'username', 'repository', and 'path' with your GitHub repository details
+
+
+pdf_files = ['file1.pdf', 'file2.pdf']  # List of PDF files in the repository
+
+loaders = []
+for pdf_file in pdf_files:
+    file_url = url + pdf_file
+    response = requests.get(file_url)
+    
+    if response.status_code == 200:
+        pdf_data = io.BytesIO(response.content)
+        pdf_reader = PdfReader(pdf_data)
+        loaders.append(pdf_reader)
+    else:
+        st.write(f"Failed to retrieve {pdf_file}")
+
+
         
 all_pages = []
 
