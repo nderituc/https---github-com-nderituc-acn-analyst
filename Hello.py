@@ -36,7 +36,7 @@ pdf_files = ['https://github.com/nderituc/https---github-com-nderituc-acn-analys
 
 loaders = []
 for pdf_file in pdf_files:
-    file_url = url + pdf_file
+    file_url = pdf_file
     response = requests.get(file_url)
     
     if response.status_code == 200:
@@ -54,7 +54,7 @@ all_pages = []
 for loader in loaders:
     pages = loader.load_and_split()
     all_pages.extend(pages)
-store = chroma.from_documents(all_pages,embeddings,collection_name='immigrant_re')
+store = Chroma.from_documents(all_pages,embeddings,collection_name='immigrant_re')
 
 vectorstore_info = vectorstoreinfo(
     name="immigrant_report",
