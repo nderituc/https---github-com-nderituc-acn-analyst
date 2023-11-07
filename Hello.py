@@ -35,7 +35,7 @@ url = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/
 pdf_files = ['https://github.com/nderituc/https---github-com-nderituc-acn-analyst/blob/main/.documents/RE_2022.01.20_Black-Immigrants_FINAL.pdf', 'https://github.com/nderituc/https---github-com-nderituc-acn-analyst/blob/main/.documents/immigrant_analysis.pdf','https://github.com/nderituc/https---github-com-nderituc-acn-analyst/blob/main/.documents/subsaharan_immigrants.pdf']  # List of PDF files in the repository
 loaders=[]
 # Loop through the list of file URLs
-for file in pdf-files:
+for file in pdf_files:
     # Fetch the PDF content from the URL
     response = requests.get(file)
     
