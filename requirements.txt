@@ -4,5 +4,6 @@ streamlit
 streamlit_ace
 pypdf
 requests
+io
 
 
