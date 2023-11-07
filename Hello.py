@@ -44,8 +44,8 @@ for file in pdf_files:
         pdf_content = response.content
         
         # Use PyPDFLoader to process the PDF content (adjust as needed based on your library)
-        cont = PyPDFLoader(pdf_content)
-        loaders.append(cont)
+        #cont = PyPDFLoader(pdf_content)
+        loaders.append(pdf_content)
         
 all_pages = []
 
