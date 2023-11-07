@@ -33,7 +33,7 @@ url = "https://github.com/nderituc/https---github-com-nderituc-acn-analyst/tree/
 # Replace 'username', 'repository', and 'path' with your GitHub repository details
 
 
-pdf_files = ['file1.pdf', 'file2.pdf']  # List of PDF files in the repository
+pdf_files = ['https://github.com/nderituc/https---github-com-nderituc-acn-analyst/blob/main/.documents/RE_2022.01.20_Black-Immigrants_FINAL.pdf', 'file2.pdf']  # List of PDF files in the repository
 
 loaders = []
 for pdf_file in pdf_files:
